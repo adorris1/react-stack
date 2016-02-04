@@ -4,32 +4,17 @@ import Firebase from 'firebase';
 class Actions {
   constructor(){
     this.generateActions(
-      'channelsReceived',
-      'channelsFailed',
-      'messagesReceived',
-      'messagesFailed',
-      'channelOpened',
-      'messagesLoading',
-      'sendMessage',
-      'messageSendSuccess',
-      'messageSendError',
-      'messageReceived'
+        'areasReceived',
+        'areasFailed',
+        'symptomSetsReceived',
+        'symptomSetsFailed',
+        'areaOpened',
+        'symptomSetsLoading',
+        'symptomSetReceived',
+        'topicsReceived',
+        'topicsFailed',
+        'topicOpened'
     );
-  }
-
-  login(router){
-    return (dispatch) => {
-      var firebaseRef = new Firebase('https://react-stack.firebaseio.com');
-      firebaseRef.authWithOAuthPopup("google", (error, user)=> {
-        if(error){
-          return;
-        }
-
-        dispatch(user);
-
-        router.transitionTo('/chat');
-      });
-    }
   }
 }
 

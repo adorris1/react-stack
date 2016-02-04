@@ -1,17 +1,15 @@
 import React from 'react';
 import App from '../components/App.jsx';
-import Chat from '../components/Chat.jsx';
-import Login from '../components/Login.jsx';
+import ContentWrapper from '../components/ContentWrapper.jsx';
 import Router from 'react-router';
 let Route = Router.Route;
 let DefaultRoute = Router.DefaultRoute;
 
 let routes = (
   <Route path="/" handler={App}>
-    <DefaultRoute handler={Chat} />
-    <Route path="chat" handler={Chat} />
-    <Route path="chat/:channel" handler={Chat} />
-    <Route path="login" handler={Login} />
+    <DefaultRoute handler={ContentWrapper} />
+    <Route path="ContentWrapper" handler={ContentWrapper} />
+    <Route path="ContentWrapper/:area" handler={ContentWrapper} />
   </Route>
 );
 

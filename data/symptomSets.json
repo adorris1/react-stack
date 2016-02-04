@@ -1,0 +1,104 @@
+{
+  "symptomSets": {
+    "head": [
+      {
+        "sufferingFrom": "Migraine Headaches",
+        "symptom": "Throbbing head pain often associated with nausea as well as sensitivity to light and sound."
+      },
+      {
+        "sufferingFrom": "Tension Headaches",
+        "symptom": "Dull, aching head pain often associated with tenderness in the neck, scalp, and shoulder muscles."
+      }
+    ],
+    "midUpperBack": [
+      {
+        "sufferingFrom": "Subluxated Rib Head",
+        "symptom": "Pain off to one side of the spine often made worse with deep breaths, laughing, coughing, or sneezing."
+      }
+    ],
+    "neck": [
+      {
+        "sufferingFrom": "Cervical Strain",
+        "symptom": "Generalized neck pain often made worse with when the head is turned or bent to the side."
+      },
+      {
+        "sufferingFrom": "Torticollis",
+        "symptom": "Neck, shoulder, and arm pain often associated with numbness or tingling into the arm, hand, or fingers."
+      },
+      {
+        "sufferingFrom": "Thoracic Outlet Syndrome ",
+        "symptom": "Neck, shoulder, and arm pain often associated with numbness or tingling into the arm, hand, or fingers."
+      }
+    ],
+    "shoulder": [
+      {
+        "sufferingFrom": "Impingement Syndrome",
+        "symptom": "Pain in the shoulder that is made worse with overhead and/or pushing motions."
+      },
+      {
+        "sufferingFrom": "Bicipital Tendinitis",
+        "symptom": "Pain in front of the shoulder that sometimes radiates down to the elbow and may be associated with a clicking or snapping feeling."
+      },
+      {
+        "sufferingFrom": "Adhesive Capsulitis",
+        "symptom": "Progressive loss of shoulder motion initially associated with pain."
+      },
+      {
+        "sufferingFrom": "AC Joint Sprain ",
+        "symptom": "Pain on the top of the shoulder aggravated by heavy lifting, overhead, and across body movements."
+      }
+    ],
+    "elbow": [
+      {
+        "sufferingFrom": "Medial Epicondylitis",
+        "symptom": "Pain from the elbow to the wrist on the palm side of the forearm."
+      },
+      {
+        "sufferingFrom": "Lateral Epicondylitis",
+        "symptom": "Pain on the back side of the elbow and along the thumb side of the forearm."
+      }
+    ],
+    "wrist": [
+      {
+        "sufferingFrom": "Carpal Tunne",
+        "symptom": "Wrist discomfort often associated with tingling, numbness, and/or weakness in the fingers or hands."
+      },
+      {
+        "sufferingFrom": "DeQuervain’s Tenosynovitis",
+        "symptom": "Pain near the base of the thumb generally made worse when attempting to grasp or pinch something."
+      },
+      {
+        "sufferingFrom": "Scaphoid Fracture",
+        "symptom": "Pain, tenderness, or swelling on the thumb side of the wrist."
+      },
+      {
+        "sufferingFrom": "Ulnar Nerve Entrapement ",
+        "symptom": "Tingling in the palm and 4th and 5th fingers often associated with weakness or tenderness in the hand."
+      }
+    ]
+  },
+  "areas": {
+    "head": {
+      "name": "head"
+    },
+    "midUpperBack":{
+      "name": "midUpperBack"
+    },
+    "neck":{
+      "name": "neck"
+    },
+    "shoulder":{
+      "name": "shoulder"
+    },
+    "elbow":{
+      "name": "elbow"
+    },
+    "wrist":{
+      "name": "wrist"
+    }
+
+  },
+  "gridList":{
+
+  }
+}
