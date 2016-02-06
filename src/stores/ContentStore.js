@@ -2,10 +2,11 @@ import alt from '../alt';
 import Actions from '../actions';
 import {decorate, bind, datasource} from 'alt/utils/decorators';
 import AreaSource from '../sources/AreaSource';
+import TopicSource from '../sources/TopicSource';
 import SymptomSetSource from '../sources/SymptomSetSource';
 import _ from 'lodash';
 
-@datasource(AreaSource, SymptomSetSource)
+@datasource(AreaSource, SymptomSetSource,TopicSource)
 @decorate(alt)
 class ContentStore {
     constructor(){

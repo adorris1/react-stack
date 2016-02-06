@@ -1,5 +1,4 @@
 import React from 'react';
-import {mergeStyles, mergeAndPrefix} from '../utils/styles';
 
 /**
  * This mixin isn't necessary and will be removed soon. DO NOT USE!
@@ -17,9 +16,7 @@ export default {
         style: React.PropTypes.object,
     },
 
-    mergeStyles,
 
-    mergeAndPrefix,
 
     prepareStyles(...args) {
         const {

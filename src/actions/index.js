@@ -13,7 +13,11 @@ class Actions {
         'symptomSetReceived',
         'topicsReceived',
         'topicsFailed',
-        'topicOpened'
+        'topicOpened',
+        'activitiesReceived',
+        'activitiesFailed',
+        'activitiesLoading',
+        'activityReceived'
     );
   }
 }

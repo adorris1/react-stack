@@ -1,7 +1,7 @@
 import React from 'react';
 import mui from 'material-ui';
-import StylePropable from './mixins/style-propable';
 import {RouteHandler} from 'react-router';
+import AppWrapper from './AppWrapper.jsx';
 import IconButton from 'material-ui/lib/icon-button';
 import NavigationClose from 'material-ui/lib/svg-icons/navigation/close';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
@@ -13,26 +13,16 @@ var Colors = mui.Styles.Colors;
 var AppBar = mui.AppBar;
 
 class App extends React.Component {
-  public get propTypes():{style: React.PropTypes.object, onRightIconButtonTouchTap: React.PropTypes.func, zDepth: PropTypes.zDepth}{
-      return _propTypes;
-      }
-
-  public set propTypes(value:{style: React.PropTypes.object, onRightIconButtonTouchTap: React.PropTypes.func, zDepth: PropTypes.zDepth}){
-      _propTypes=value;
-      }
-
-  private _propTypes: {
-      style: React.PropTypes.object,
-      onRightIconButtonTouchTap: React.PropTypes.func
-      zDepth: PropTypes.zDepth
-
-      };
-  constructor(){
-    super();
+  constructor(props, context) {
+    super(props, context);
+    this.handleRequestClose = this.handleRequestClose.bind(this);
+    this.handleTouchTap = this.handleTouchTap.bind(this);
 
     this.state = {
-      tooltipShown: true
+      open: false,
     };
+
+
   ThemeManager.setPalette({
       primary1Color: Colors.blue500,
       primary2Color: Colors.blue700,
@@ -40,106 +30,40 @@ class App extends React.Component {
       accent1Color: Colors.pink400
     });
   }
-  onRightIconButtonTouchTap(event) {
-    if (this.props.onRightIconButtonTouchTap) {
-      this.props.onRightIconButtonTouchTap(event);
-    }
+
+
+  static childContextTypes = {
+    muiTheme: React.PropTypes.object
+  };
+  handleRequestClose() {
+    this.setState({
+      open: false,
+    });
   }
-  getInitialState() {
+  handleTouchTap() {
+    this.setState({
+      open: true
+    });
+  }
+
+
+  getChildContext(){
     return {
-      muiTheme: this.context.muiTheme || getMuiTheme()
+      muiTheme: ThemeManager.getCurrentTheme()
     };
   }
-
-  getChildContext() {
-    return {
-      muiTheme: this.state.muiTheme
-    };
-  }
-  getStyles() {
-    const muiTheme = this.state.muiTheme;
-    const rawTheme = muiTheme.rawTheme;
-
-    let styles = {
-      root: {
-        position: 'relative',
-        zIndex: muiTheme.zIndex.appBar,
-        width: '100%',
-        display: 'flex',
-        minHeight: themeVariables.height,
-        backgroundColor: themeVariables.color,
-        paddingLeft: rawTheme.spacing.desktopGutter,
-        paddingRight: rawTheme.spacing.desktopGutter,
-      },
-      title: {
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        margin: 0,
-        paddingTop: 0,
-        letterSpacing: 0,
-        fontSize: 24,
-        fontWeight: Typography.fontWeightNormal,
-        color: themeVariables.textColor,
-        lineHeight: themeVariables.height + 'px',
-      },
-      mainElement: {
-        boxFlex: 1,
-        flex: '1'
-      },
-      iconButton: {
-        style: {
-          marginTop: (themeVariables.height - iconButtonSize) / 2,
-          marginRight: 8,
-          marginLeft: -16
-        },
-        iconStyle: {
-          fill: themeVariables.textColor,
-          color: themeVariables.textColor
-        }
-      },
-      flatButton: {
-        color: themeVariables.textColor,
-        marginTop: (iconButtonSize - flatButtonSize) / 2 + 2
-      }
-    };
-
-    return styles;
-  }
-
-
-  //static childContextTypes = {
-  //  muiTheme: React.PropTypes.object
-  //}
-  //getChildContext(){
-  //  return {
-  //    muiTheme: ThemeManager.getCurrentTheme()
-  //  };
-  //}
 
   render(){
-
+    const standardActions = (
+        <IconMenu
+            label="Okey"
+            secondary={true}
+            onTouchTap={this.handleRequestClose}
+        />
+    );
     return (
       <div>
-        <AppBar title="Awesome Chat App"
-                iconElementRight={
-      <IconMenu
-        iconButtonElement={
-          <IconButton
-          style={iconRightStyle}
-          iconStyle={this.mergeStyles(styles.iconButton.iconStyle)}
-          iconClassName={iconClassNameRight}
-          onTouchTap={this._onRightIconButtonTouchTap}          ><MoreVertIcon /></IconButton>
-        }
-        targetOrigin={{horizontal: 'right', vertical: 'top'}}
-        anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-      >
-        <MenuItem primaryText="Refresh" />
-        <MenuItem primaryText="Help" />
-        <MenuItem primaryText="Sign out" />
-      </IconMenu>
-    }
-        />
+       <AppWrapper {...this.props}/>
         <RouteHandler />
 
       </div>

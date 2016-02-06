@@ -1,33 +1,31 @@
 import React from 'react';
 import mui from 'material-ui';
 import Actions from '../actions';
-
 var {ListItem} = mui;
 
-class Area extends React.Component{
+class Topic extends React.Component{
     constructor(props){
         super(props);
     }
 
     onClick(){
-        Actions.areaOpened(this.props.area);
+        Actions.topicOpened(this.props.topic);
     }
-
     render(){
         let style = {};
 
-        if(this.props.area.selected){
+        if(this.props.topic.selected){
             style.backgroundColor = '#f0f0f0';
         }
 
         return (
             <ListItem
-                href={ '/#/ContentWrapper/' +this.props.area.key}
+                href={ '/#/ContentWrapper/' +this.props.topic.key}
                 style={style}
-                key={this.props.area.key}
-            >{this.props.area.name}</ListItem>
+                key={this.props.topic.key}
+            >{this.props.topic.title}</ListItem>
         );
     }
 }
 
-export default Area;
+export default Topic;
