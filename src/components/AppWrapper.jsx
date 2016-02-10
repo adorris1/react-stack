@@ -4,10 +4,13 @@ import Tab from 'material-ui/lib/tabs/tab';
 import ActivityWrapper from './ActivityWrapper.jsx';
 import ContentWrapper from './ContentWrapper.jsx';
 import FontIcon from 'material-ui/lib/font-icon';
+import SvgIcon from 'material-ui/lib/svg-icon';
+let IconBase = require('react-icon-base');
+import IconList from './IconList.jsx';
 
 class AppWrapper extends React.Component{
 
-    constructor(props) {
+    constructor(props){
         super(props);
         this.state = {
             value: 'a'
@@ -38,7 +41,7 @@ class AppWrapper extends React.Component{
                             <ActivityWrapper {...this.props} />
 
                         </Tab>
-                        <Tab label="Symptom Identifier" value="b" >
+                        <Tab icon = {<exersizeIcon className= "meterial-icons">label="Symptom Identifier" value="b" >
                             <ContentWrapper {...this.props}/>
                         </Tab>
                     </Tabs>

@@ -5,6 +5,7 @@ import ActivityStore from '../stores/ActivityStore';
 
 class ActivityWrapper extends React.Component {
     render(){
+
         return (
             <div>
                 <div style={{
