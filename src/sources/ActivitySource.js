@@ -3,7 +3,7 @@ import Firebase from 'firebase';
 
 let firebaseRef = null;
 
-let SymptomSetSource = {
+let ActivitySource = {
     getActivities: {
         remote(state){
 
@@ -11,31 +11,31 @@ let SymptomSetSource = {
                 firebaseRef.off();
             }
 
-            firebaseRef = new Firebase('https://dorris-chiro.firebaseio.com/topicData/' +
+            firebaseRef = new Firebase('https://dorris-chiro.firebaseio.com/activites/' +
                 state.selectedTopic.key);
 
             return new Promise((resolve, reject) => {
                 firebaseRef.once("value", (dataSnapshot) => {
-                    var topicData = dataSnapshot.val();
-                    resolve(topicData);
+                    var activites = dataSnapshot.val();
+                    resolve(activites);
 
 
                     setTimeout(()=> {
-                        firebaseRef.on("child_added", ((item) => {
-                            let topicItem = item.val();
-                            topicItem.key = item.key();
-                            Actions.topicItemReceived(topicItem);
+                        firebaseRef.on("child_added", ((act) => {
+                            let activityVal = act.val();
+                            activityVal.key = act.key();
+                            Actions.activityReceived(activityVal);
                         }));
                     }, 10);
 
                 })
             });
         },
-        success: Actions.topicItemsReceived,
-        error: Actions.topicItemsFailed,
-        loading: Actions.topicItemsLoading
+        success: Actions.activitiesReceived,
+        error: Actions.activitiesFailed,
+        loading: Actions.activitiesLoading
     }
 
 }
 
-export default SymptomSetSource;
+export default ActivitySource;

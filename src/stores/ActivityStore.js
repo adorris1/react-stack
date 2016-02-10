@@ -1,55 +1,55 @@
 import alt from '../alt';
 import Actions from '../actions';
 import {decorate, bind, datasource} from 'alt/utils/decorators';
-import TopicDataSource from '../sources/ActivitySource';
+import ActivitySource from '../sources/ActivitySource';
 import TopicSource from '../sources/TopicSource';
 import _ from 'lodash';
 
-@datasource(TopicSource, TopicDataSource)
+@datasource(TopicSource, ActivitySource)
 @decorate(alt)
-class TopicStore {
+class ActivityStore {
     constructor(){
         this.state = {
-            topicData: null,
-            topicItemsLoading: true
+            activites: null,
+            activitiesLoading: true
         };
     }
 
-    @bind(Actions.topicItemsLoading)
-    topicItemsLoading(){
+    @bind(Actions.activitiesLoading)
+    activitiesLoading(){
         this.setState({
-            topicItemsLoading: true
+            activitiesLoading: true
         });
     }
 
-    @bind(Actions.topicItemsReceived)
-    receivedTopicItems(topicData){
-        _(topicData)
+    @bind(Actions.activitiesReceived)
+    receivedActivites(activities){
+        _(activities)
             .keys()
             .each((k)=> {
-                topicData[k].key = k;
+                activities[k].key = k;
             })
             .value();
 
         this.setState({
-            topicData,
-            topicItemsLoading: false
+            activities,
+            activitiesLoading: false
         });
     }
 
 
 
 
-    @bind(Actions.topicItemReceived)
-    topicItemReceived(data){
-        if(this.state.topicData[data.key]){
+    @bind(Actions.activityReceived)
+    activityReceived(act){
+        if(this.state.activities[act.key]){
             return;
         }
 
-        this.state.topicData[data.key] = data;
+        this.state.activities[act.key] = act;
 
         this.setState({
-            topicData: this.state.topicData
+            activities: this.state.activities
         });
     }
 
@@ -69,7 +69,7 @@ class TopicStore {
             topics: this.state.topics
         });
 
-        setTimeout(this.getInstance().getTopicItems, 100);
+        setTimeout(this.getInstance().getActivities, 100);
     }
 
     @bind(Actions.topicsReceived)
@@ -86,14 +86,14 @@ class TopicStore {
             .value();
 
         this.setState({
-            areas,
+            topics,
             selectedTopic
         });
 
-        setTimeout(this.getInstance().getTopicItems, 100);
+        setTimeout(this.getInstance().getActivities, 100);
     }
 
 
 }
 
-export default alt.createStore(TopicStore);
+export default alt.createStore(ActivityStore);

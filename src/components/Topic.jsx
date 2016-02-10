@@ -20,7 +20,7 @@ class Topic extends React.Component{
 
         return (
             <ListItem
-                href={ '/#/ContentWrapper/' +this.props.topic.key}
+                href={ '/#/ActivityWrapper/' +this.props.topic.key}
                 style={style}
                 key={this.props.topic.key}
             >{this.props.topic.title}</ListItem>

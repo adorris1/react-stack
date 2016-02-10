@@ -4,7 +4,7 @@ import mui from 'material-ui';
 import Firebase from 'firebase';
 import _ from 'lodash';
 import connectToStores from 'alt/utils/connectToStores';
-import ContentStore from '../stores/ActivityStore';
+import ActivityStore from '../stores/ActivityStore';
 
 var {Card, List, CircularProgress} = mui;
 
@@ -15,11 +15,11 @@ class ActivityList extends React.Component {
     }
 
     static getStores(){
-        return [ContentStore];
+        return [ActivityStore];
     }
 
     static getPropsFromStores(){
-        return  ContentStore.getState();
+        return  ActivityStore.getState();
     }
 
     render(){

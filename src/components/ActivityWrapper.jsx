@@ -1,10 +1,9 @@
 import React from 'react';
-import AreaList from './AreaList.jsx';
-import ContentList from './ContentList.jsx';
-import ContentStore from '../stores/ContentStore';
+import TopicList from './TopicList.jsx';
+import ActivityList from './ActivityList.jsx';
+import ActivityStore from '../stores/ActivityStore';
 
-
-class ContentWrapper extends React.Component {
+class ActivityWrapper extends React.Component {
     render(){
         return (
             <div>
@@ -15,8 +14,8 @@ class ContentWrapper extends React.Component {
           width: '100%',
           margin: '30px auto 30px'
         }}>
-                    <AreaList {...this.props} />
-                    <ContentList />
+                    <TopicList {...this.props} />
+                    <ActivityList />
                 </div>
             </div>
         );
@@ -24,5 +23,4 @@ class ContentWrapper extends React.Component {
 }
 
 
-
-export default ContentWrapper;
+export default ActivityWrapper;

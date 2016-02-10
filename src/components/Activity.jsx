@@ -10,9 +10,12 @@ class Activity extends React.Component{
     }
 
     render(){
+        var commonErrors = this.props.activity.commonErrors;
         return (
             <ListItem
                 primaryText={
+                commonErrors.map(function(err, i){
+
                 <p><span style={{color: Colors.darkBlack}}>Type: </span><br/>
 
                 {this.props.activity.type}
@@ -22,5 +25,11 @@ class Activity extends React.Component{
         );
     }
 }
+var ActivityItem = React.createClass({
+    render: function (){
+        "use strict";
+        return(<li></li>)
+    }
+})
 
 export default Activity;

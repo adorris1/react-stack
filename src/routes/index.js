@@ -1,15 +1,20 @@
 import React from 'react';
 import App from '../components/App.jsx';
 import ContentWrapper from '../components/ContentWrapper.jsx';
+import ActivityWrapper from '../components/ActivityWrapper.jsx'
+import AppWrapper from '../components/AppWrapper.jsx';
+
 import Router from 'react-router';
 let Route = Router.Route;
 let DefaultRoute = Router.DefaultRoute;
 
 let routes = (
   <Route path="/" handler={App}>
-    <DefaultRoute handler={ContentWrapper} />
-    <Route path="ContentWrapper" handler={ContentWrapper} />
-    <Route path="ContentWrapper/:area" handler={ContentWrapper} />
+    <DefaultRoute handler={AppWrapper} />
+      <Route path="ActivityWrapper" handler={AppWrapper} />
+      <Route path="ActivityWrapper/:topic" handler={AppWrapper} />
+      <Route path="ContentWrapper" handler={AppWrapper} />
+      <Route path="ContentWrapper/:area" handler={AppWrapper} />
   </Route>
 );
 
