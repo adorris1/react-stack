@@ -1,4 +1,4 @@
-{
+
   "name": "react-stack",
   "version": "1.0.0",
   "description": "",
@@ -19,7 +19,6 @@
     "node-sass": "3.4.1",
     "react": "0.13.3",
     "react-hot-loader": "1.2.8",
-    "react-icons": "^1.0.3",
     "react-router": "0.13.3",
     "react-tap-event-plugin": "0.1.7",
     "sass-loader": "1.0.3",
