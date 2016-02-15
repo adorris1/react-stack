@@ -4,7 +4,7 @@ import mui from 'material-ui';
 import connectToStores from 'alt/utils/connectToStores';
 import ActivityStore from '../stores/ActivityStore';
 
-var {Card, List, CircularProgress} = mui;
+var {Card, List, CircularProgress, DropDownMenu, MenuItem} = mui;
 
 @connectToStores
 class TopicList extends React.Component{
@@ -71,6 +71,7 @@ class TopicList extends React.Component{
                 <List>
                     {topicNodes}
                 </List>
+
             </Card>
         );
     }

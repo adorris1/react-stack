@@ -5,3 +5,15 @@ body {
   margin: 0;
     background-color: #F9F9F9;
 }
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+}
+
+.dropdown--active .dropdown__content {
+  display: block;
+}

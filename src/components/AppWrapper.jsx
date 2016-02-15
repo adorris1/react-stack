@@ -3,10 +3,11 @@ import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 import ActivityWrapper from './ActivityWrapper.jsx';
 import ContentWrapper from './ContentWrapper.jsx';
-import FontIcon from 'material-ui/lib/font-icon';
-import SvgIcon from 'material-ui/lib/svg-icon';
-let IconBase = require('react-icon-base');
-import IconList from './IconList.jsx';
+import MenuList from './dropDownMenu/MenuList.jsx';
+//import FontIcon from 'material-ui/lib/font-icon';
+//import SvgIcon from 'material-ui/lib/svg-icon';
+//let IconBase = require('react-icon-base');
+//import IconList from './IconList.jsx';
 
 class AppWrapper extends React.Component{
 
@@ -14,6 +15,7 @@ class AppWrapper extends React.Component{
         super(props);
         this.state = {
             value: 'a'
+
         };
     }
     handleChange = (value) => {
@@ -38,10 +40,10 @@ class AppWrapper extends React.Component{
                     >
 
                         <Tab label="Exercises and Stretches " value="a">
+                            <MenuList/>
                             <ActivityWrapper {...this.props} />
-
                         </Tab>
-                        <Tab icon = {<exersizeIcon className= "meterial-icons">label="Symptom Identifier" value="b" >
+                        <Tab label="Symptom Identifier" value="b" >
                             <ContentWrapper {...this.props}/>
                         </Tab>
                     </Tabs>
