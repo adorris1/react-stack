@@ -1,33 +1,39 @@
-let React = require('react');
-let StylePropable = require('./mixins/style-propable');
-let Transitions = require('./styles/transitions');
-let ClickAwayable = require('./mixins/click-awayable');
-let FontIcon = require('./font-icon');
-let Menu = require('./menu/menu');
+import React from 'react';
+import StylePropable from './mixins/style-propable';
+import Transitions from './styles/transitions';
+import ClickAwayable from './mixins/click-awayable';
+import FontIcon from './font-icon';
+import Menu from './menu/menu';
+import getMuiTheme from './styles/getMuiTheme';
+import warning from 'warning';
 
+const DropDownIcon = React.createClass({
 
-let DropDownIcon = React.createClass({
+  propTypes: {
+    children: React.PropTypes.node,
+    closeOnMenuItemTouchTap: React.PropTypes.bool,
+    iconClassName: React.PropTypes.string,
+    iconLigature: React.PropTypes.string,
+    iconStyle: React.PropTypes.object,
+    menuItems: React.PropTypes.array.isRequired,
+    onChange: React.PropTypes.func,
 
-  mixins: [StylePropable, ClickAwayable],
+    /**
+     * Override the inline-styles of the root element.
+     */
+    style: React.PropTypes.object,
+  },
 
   contextTypes: {
     muiTheme: React.PropTypes.object,
   },
 
-  propTypes: {
-    onChange: React.PropTypes.func,
-    menuItems: React.PropTypes.array.isRequired,
-    closeOnMenuItemTouchTap: React.PropTypes.bool,
-    iconStyle: React.PropTypes.object,
-    iconClassName: React.PropTypes.string,
-    iconLigature: React.PropTypes.string,
+  //for passing default theme context to children
+  childContextTypes: {
+    muiTheme: React.PropTypes.object,
   },
 
-  getInitialState() {
-    return {
-      open: false,
-    };
-  },
+  mixins: [StylePropable, ClickAwayable],
 
   getDefaultProps() {
     return {
@@ -35,19 +41,35 @@ let DropDownIcon = React.createClass({
     };
   },
 
-  componentDidMount() {
-    // This component can be deprecated once ./menu/menu has been deprecated.
-    // if (process.env.NODE_ENV !== 'production') {
-    //   console.warn('DropDownIcon has been deprecated. Use IconMenu instead.');
-    // }
+  getInitialState() {
+    warning(false, 'DropDownIcon has been deprecated and will be removed in an upcoming verion.' +
+      ' Please use IconMenu instead.');
+
+    return {
+      open: false,
+      muiTheme: this.context.muiTheme || getMuiTheme(),
+    };
+  },
+
+  getChildContext() {
+    return {
+      muiTheme: this.state.muiTheme,
+    };
+  },
+
+  //to update theme inside state whenever a new theme is passed down
+  //from the parent / owner using context
+  componentWillReceiveProps(nextProps, nextContext) {
+    let newMuiTheme = nextContext.muiTheme ? nextContext.muiTheme : this.state.muiTheme;
+    this.setState({muiTheme: newMuiTheme});
   },
 
   componentClickAway() {
-    this.setState({ open: false });
+    this.setState({open: false});
   },
 
   getStyles() {
-    let spacing = this.context.muiTheme.spacing;
+    let spacing = this.state.muiTheme.rawTheme.spacing;
     let iconWidth = 48;
     let styles = {
       root: {
@@ -57,7 +79,7 @@ let DropDownIcon = React.createClass({
         height: spacing.desktopToolbarHeight,
         fontSize: spacing.desktopDropDownMenuFontSize,
         cursor: 'pointer',
-       },
+      },
       menu: {
         transition: Transitions.easeOut(),
         right: '-14px !important',
@@ -65,58 +87,64 @@ let DropDownIcon = React.createClass({
         opacity: (this.state.open) ? 1 : 0,
       },
       menuItem: { // similair to drop down menu's menu item styles
-        paddingRight: (spacing.iconSize + (spacing.desktopGutterLess*2)),
+        paddingRight: (spacing.iconSize + (spacing.desktopGutterLess * 2)),
         height: spacing.desktopDropDownMenuItemHeight,
-        lineHeight: spacing.desktopDropDownMenuItemHeight +'px',
+        lineHeight: spacing.desktopDropDownMenuItemHeight + 'px',
       },
     };
     return styles;
   },
 
-  render() {
-    let {
-      style,
-      children,
-      menuItems,
-      closeOnMenuItemTouchTap,
-      iconStyle,
-      iconClassName,
-      ...other,
-    } = this.props;
-
-    let styles = this.getStyles();
-
-    return (
-      <div {...other} style={this.mergeAndPrefix(styles.root, this.props.style)}>
-          <div onTouchTap={this._onControlClick}>
-              <FontIcon
-                className={iconClassName}
-                style={iconStyle}>{this.props.iconLigature}</FontIcon>
-              {this.props.children}
-          </div>
-          <Menu
-            ref="menuItems"
-            style={this.mergeAndPrefix(styles.menu)}
-            menuItems={menuItems}
-            menuItemStyle={styles.menuItem}
-            hideable={true}
-            visible={this.state.open}
-            onItemTap={this._onMenuItemClick} />
-        </div>
-    );
-  },
-
   _onControlClick() {
-    this.setState({ open: !this.state.open });
+    this.setState({open: !this.state.open});
   },
 
   _onMenuItemClick(e, key, payload) {
     if (this.props.onChange) this.props.onChange(e, key, payload);
 
     if (this.props.closeOnMenuItemTouchTap) {
-      this.setState({ open: false });
+      this.setState({open: false});
     }
   },
+
+  render() {
+    const {
+      style,
+      children,
+      menuItems,
+      closeOnMenuItemTouchTap,
+      iconStyle,
+      iconLigature,
+      iconClassName,
+      ...other,
+    } = this.props;
+
+    const styles = this.getStyles();
+
+    return (
+      <div {...other} style={this.prepareStyles(styles.root, style)}>
+        <div onTouchTap={this._onControlClick}>
+          <FontIcon
+            className={iconClassName}
+            style={iconStyle}
+          >
+            {iconLigature}
+          </FontIcon>
+          {children}
+        </div>
+        <Menu
+          ref="menuItems"
+          style={styles.menu}
+          menuItems={menuItems}
+          menuItemStyle={styles.menuItem}
+          hideable={true}
+          visible={this.state.open}
+          onItemTap={this._onMenuItemClick}
+        />
+      </div>
+    );
+  },
+
 });
 
-module.exports = DropDownIcon;
+export default DropDownIcon;

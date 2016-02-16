@@ -1,40 +1,65 @@
-let React = require('react');
-let StylePropable = require('../mixins/style-propable');
+import React from 'react';
+import StylePropable from '../mixins/style-propable';
+import getMuiTheme from '../styles/getMuiTheme';
 
+/*eslint-disable */
 
-let LinkMenuItem = React.createClass({
+const LinkMenuItem = React.createClass({
 
-  mixins: [StylePropable],
+  propTypes: {
+    active: React.PropTypes.bool,
+    className: React.PropTypes.string,
+    disabled: React.PropTypes.bool,
+    index: React.PropTypes.number.isRequired,
+    onMouseEnter: React.PropTypes.func,
+    onMouseLeave: React.PropTypes.func,
+    payload: React.PropTypes.string.isRequired,
+    selected: React.PropTypes.bool,
+    style: React.PropTypes.object,
+    target: React.PropTypes.string,
+    text: React.PropTypes.string.isRequired,
+  },
 
   contextTypes: {
     muiTheme: React.PropTypes.object,
   },
 
-  propTypes: {
-    index: React.PropTypes.number.isRequired,
-    payload: React.PropTypes.string.isRequired,
-    text: React.PropTypes.string.isRequired,
-    target: React.PropTypes.string,
-    active: React.PropTypes.bool,
-    disabled: React.PropTypes.bool,
-    className: React.PropTypes.string,
+  //for passing default theme context to children
+  childContextTypes: {
+    muiTheme: React.PropTypes.object,
   },
+
+  mixins: [StylePropable],
 
   getDefaultProps() {
     return {
-      active:false,
+      active: false,
       disabled: false,
     };
   },
 
   getInitialState() {
     return {
+      muiTheme: this.context.muiTheme || getMuiTheme(),
       hovered: false,
     };
   },
 
+  getChildContext() {
+    return {
+      muiTheme: this.state.muiTheme,
+    };
+  },
+
+  //to update theme inside state whenever a new theme is passed down
+  //from the parent / owner using context
+  componentWillReceiveProps(nextProps, nextContext) {
+    let newMuiTheme = nextContext.muiTheme ? nextContext.muiTheme : this.state.muiTheme;
+    this.setState({muiTheme: newMuiTheme});
+  },
+
   getTheme() {
-    return this.context.muiTheme.component.menuItem;
+    return this.state.muiTheme.menuItem;
   },
 
   getStyles() {
@@ -55,11 +80,25 @@ let LinkMenuItem = React.createClass({
       },
       rootWhenDisabled: {
         cursor: 'default',
-        color: this.context.muiTheme.palette.disabledColor,
+        color: this.state.muiTheme.rawTheme.palette.disabledColor,
       },
     };
 
     return style;
+  },
+
+  _stopLink(event) {
+    event.preventDefault();
+  },
+
+  _handleMouseEnter(e) {
+    this.setState({hovered: true});
+    if (!this.props.disabled && this.props.onMouseEnter) this.props.onMouseEnter(e);
+  },
+
+  _handleMouseLeave(e) {
+    this.setState({hovered: false});
+    if (!this.props.disabled && this.props.onMouseLeave) this.props.onMouseLeave(e);
   },
 
   render() {
@@ -72,7 +111,7 @@ let LinkMenuItem = React.createClass({
     let styles = this.getStyles();
 
     let linkStyles =
-      this.mergeAndPrefix(
+      this.prepareStyles(
         styles.root,
         this.props.selected && styles.rootWhenSelected,
         this.props.selected && styles.rootWhenSelected,
@@ -94,19 +133,6 @@ let LinkMenuItem = React.createClass({
     );
   },
 
-  _stopLink(event) {
-    event.preventDefault();
-  },
-
-  _handleMouseEnter(e) {
-    this.setState({hovered: true});
-    if (!this.props.disabled && this.props.onMouseEnter) this.props.onMouseEnter(e);
-  },
-
-  _handleMouseLeave(e) {
-    this.setState({hovered: false});
-    if (!this.props.disabled && this.props.onMouseLeave) this.props.onMouseLeave(e);
-  },
 });
 
-module.exports = LinkMenuItem;
+export default LinkMenuItem;

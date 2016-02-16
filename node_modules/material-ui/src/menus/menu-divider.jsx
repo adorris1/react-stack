@@ -1,30 +1,41 @@
-let React = require('react/addons');
-let StylePropable = require('../mixins/style-propable');
-let ListDivider = require('../lists/list-divider');
+import React from 'react';
+import Divider from '../divider';
+import {mergeStyles} from '../utils/styles';
+import warning from 'warning';
 
-let MenuDivider = React.createClass({
+const MenuDivider = React.createClass({
 
-  mixins: [StylePropable],
+  propTypes: {
+    /**
+     * Override the inline-styles of the root element.
+     */
+    style: React.PropTypes.object,
+  },
 
-  contextTypes: {
-    muiTheme: React.PropTypes.object,
+  getInitialState() {
+    warning(false, '<MenuDivider /> has been deprecated. Please use the <Divider /> component.');
+    return null;
+  },
+
+  getStyles() {
+    return {
+      root: {
+        marginTop: 7,
+        marginBottom: 8,
+      },
+    };
   },
 
   render() {
-    let {
+    const {
       style,
       ...other,
     } = this.props;
 
-    let mergedStyles = this.mergeAndPrefix({
-      marginTop: 7,
-      marginBottom: 8,
-    }, style);
+    const styles = this.getStyles();
 
-    return (
-      <ListDivider {...other} style={mergedStyles} />
-    );
+    return <Divider {...this.props} style={mergeStyles(styles.root, style)} />;
   },
 });
 
-module.exports = MenuDivider;
+export default MenuDivider;

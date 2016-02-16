@@ -1,29 +1,56 @@
-let React = require('react');
-let StylePropable = require('../mixins/style-propable');
-let Typography = require('../styles/typography');
+import React from 'react';
+import StylePropable from '../mixins/style-propable';
+import Typography from '../styles/typography';
+import getMuiTheme from '../styles/getMuiTheme';
 
+const SubheaderMenuItem = React.createClass({
 
-let SubheaderMenuItem = React.createClass({
-
-  mixins: [StylePropable],
+  propTypes: {
+    className: React.PropTypes.string,
+    firstChild: React.PropTypes.bool,
+    index: React.PropTypes.number.isRequired,
+    style: React.PropTypes.object,
+    text: React.PropTypes.string.isRequired,
+  },
 
   contextTypes: {
     muiTheme: React.PropTypes.object,
   },
 
-  propTypes: {
-      index: React.PropTypes.number.isRequired,
-      text: React.PropTypes.string.isRequired,
-      firstChild: React.PropTypes.bool,
-      className: React.PropTypes.string,
+  //for passing default theme context to children
+  childContextTypes: {
+    muiTheme: React.PropTypes.object,
+  },
+
+  mixins: [
+    StylePropable,
+  ],
+
+  getInitialState() {
+    return {
+      muiTheme: this.context.muiTheme || getMuiTheme(),
+    };
+  },
+
+  getChildContext() {
+    return {
+      muiTheme: this.state.muiTheme,
+    };
+  },
+
+  //to update theme inside state whenever a new theme is passed down
+  //from the parent / owner using context
+  componentWillReceiveProps(nextProps, nextContext) {
+    let newMuiTheme = nextContext.muiTheme ? nextContext.muiTheme : this.state.muiTheme;
+    this.setState({muiTheme: newMuiTheme});
   },
 
   getTheme() {
-    return this.context.muiTheme.component.menuSubheader;
+    return this.state.muiTheme.menuSubheader;
   },
 
   getSpacing() {
-    return this.context.muiTheme.spacing;
+    return this.state.muiTheme.rawTheme.spacing;
   },
 
   getStyles() {
@@ -56,19 +83,20 @@ let SubheaderMenuItem = React.createClass({
 
   render() {
     return (
-        <div
-          key={this.props.index}
-          className={this.props.className}
-          style={this.mergeAndPrefix(
-            this.getStyles().root,
-            this.props.firstChild && this.getStyles().rootWhenFirstChild,
-            this.props.style
-          )}>
-            {this.props.text}
-        </div>
+      <div
+        key={this.props.index}
+        className={this.props.className}
+        style={this.prepareStyles(
+          this.getStyles().root,
+          this.props.firstChild && this.getStyles().rootWhenFirstChild,
+          this.props.style
+        )}
+      >
+        {this.props.text}
+      </div>
     );
   },
 
 });
 
-module.exports = SubheaderMenuItem;
+export default SubheaderMenuItem;

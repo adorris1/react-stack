@@ -1,39 +1,17 @@
-let React = require('react/addons');
-let StylePropable = require('../mixins/style-propable');
+import React from 'react';
+import Divider from '../divider';
+import warning from 'warning';
 
+const ListDivider = React.createClass({
 
-let ListDivider = React.createClass({
-
-  mixins: [StylePropable],
-
-  contextTypes: {
-    muiTheme: React.PropTypes.object,
-  },
-
-  propTypes: {
-    inset: React.PropTypes.bool,
+  getInitialState() {
+    warning(false, '<ListDivider /> has been deprecated. Please use the <Divider /> component.');
+    return null;
   },
 
   render() {
-    let {
-      inset,
-      style,
-      ...other,
-    } = this.props;
-
-    let mergedStyles = this.mergeAndPrefix({
-      margin: 0,
-      marginTop: -1,
-      marginLeft: inset ? 72 : 0,
-      height: 1,
-      border: 'none',
-      backgroundColor: this.context.muiTheme.palette.borderColor,
-    }, style);
-
-    return (
-      <hr {...other} style={mergedStyles} />
-    );
+    return <Divider {...this.props} />;
   },
 });
 
-module.exports = ListDivider;
+export default ListDivider;

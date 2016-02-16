@@ -3,7 +3,7 @@ import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
 import ActivityWrapper from './ActivityWrapper.jsx';
 import ContentWrapper from './ContentWrapper.jsx';
-import MenuList from './dropDownMenu/MenuList.jsx';
+//import MenuList from './dropDownMenu/MenuList.jsx';
 //import FontIcon from 'material-ui/lib/font-icon';
 //import SvgIcon from 'material-ui/lib/svg-icon';
 //let IconBase = require('react-icon-base');
@@ -40,7 +40,6 @@ class AppWrapper extends React.Component{
                     >
 
                         <Tab label="Exercises and Stretches " value="a">
-                            <MenuList/>
                             <ActivityWrapper {...this.props} />
                         </Tab>
                         <Tab label="Symptom Identifier" value="b" >

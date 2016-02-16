@@ -3,7 +3,6 @@ import App from '../components/App.jsx';
 import ContentWrapper from '../components/ContentWrapper.jsx';
 import ActivityWrapper from '../components/ActivityWrapper.jsx'
 import AppWrapper from '../components/AppWrapper.jsx';
-import MenuList from '../components/MenuList.jsx';
 
 import Router from 'react-router';
 let Route = Router.Route;
@@ -12,7 +11,6 @@ let DefaultRoute = Router.DefaultRoute;
 let routes = (
   <Route path="/" handler={App}>
     <DefaultRoute handler={AppWrapper} />
-    <Route path="MenuList" handler={AppWrapper} />
       <Route path="ActivityWrapper" handler={AppWrapper} />
       <Route path="ActivityWrapper/:topic" handler={AppWrapper} />
       <Route path="ContentWrapper" handler={AppWrapper} />

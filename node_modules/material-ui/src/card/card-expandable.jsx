@@ -1,31 +1,86 @@
-let React = require('react');
-let OpenIcon = require('../svg-icons/hardware/keyboard-arrow-up');
-let CloseIcon = require('../svg-icons/hardware/keyboard-arrow-down');
-let IconButton = require('../icon-button');
+import React from 'react';
+import OpenIcon from '../svg-icons/hardware/keyboard-arrow-up';
+import CloseIcon from '../svg-icons/hardware/keyboard-arrow-down';
+import IconButton from '../icon-button';
+import StylePropable from '../mixins/style-propable';
+import getMuiTheme from '../styles/getMuiTheme';
+import ContextPure from '../mixins/context-pure';
 
-let CardExpandable = React.createClass({
-  getStyles() {
+const CardExpandable = React.createClass({
+
+  propTypes: {
+    expanded: React.PropTypes.bool,
+    onExpanding: React.PropTypes.func.isRequired,
+
+    /**
+     * Override the inline-styles of the root element.
+     */
+    style: React.PropTypes.object,
+  },
+
+  contextTypes: {
+    muiTheme: React.PropTypes.object,
+  },
+
+  //for passing default theme context to children
+  childContextTypes: {
+    muiTheme: React.PropTypes.object,
+  },
+
+  mixins: [
+    StylePropable,
+    ContextPure,
+  ],
+
+  statics: {
+    getRelevantContextKeys(muiTheme) {
+      return {
+        isRtl: muiTheme.isRtl,
+      };
+    },
+    getChildrenClasses() {
+      return [
+        IconButton,
+      ];
+    },
+  },
+
+  getInitialState() {
     return {
-      root: {
-        right: 4,
+      muiTheme: this.context.muiTheme || getMuiTheme(),
+    };
+  },
+
+  getChildContext() {
+    return {
+      muiTheme: this.state.muiTheme,
+    };
+  },
+
+  //to update theme inside state whenever a new theme is passed down
+  //from the parent / owner using context
+  componentWillReceiveProps(nextProps, nextContext) {
+    let newMuiTheme = nextContext.muiTheme ? nextContext.muiTheme : this.state.muiTheme;
+    this.setState({muiTheme: newMuiTheme});
+  },
+
+  getStyles() {
+    const contextKeys = this.constructor.getRelevantContextKeys(this.state.muiTheme);
+
+    const directionStyle = contextKeys.isRtl ? {
+      left: 4,
+    } : {
+      right: 4,
+    };
+
+    return {
+      root: this.mergeStyles({
         top: 0,
         bottom: 0,
         margin: 'auto',
         position: 'absolute',
-      },
+      }, directionStyle),
     };
-  },
-
-  propTypes: {
-    onExpanding: React.PropTypes.func.isRequired,
-    expanded: React.PropTypes.bool,
-  },
-
-  _onExpanding() {
-    if (this.props.expanded === true)
-      this.props.onExpanding(false);
-    else
-      this.props.onExpanding(true);
   },
 
   render() {
@@ -37,10 +92,13 @@ let CardExpandable = React.createClass({
     else
       expandable = <CloseIcon/>;
 
+    let mergedStyles = this.mergeStyles(styles.root, this.props.style);
+
     let expandableBtn = (
       <IconButton
-        style={styles.root}
-        onClick={this._onExpanding}>
+        style={mergedStyles}
+        onTouchTap={this.props.onExpanding}
+      >
         {expandable}
       </IconButton>
     );
@@ -50,4 +108,4 @@ let CardExpandable = React.createClass({
   },
 });
 
-module.exports = CardExpandable;
+export default CardExpandable;
