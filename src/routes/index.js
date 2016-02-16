@@ -3,6 +3,7 @@ import App from '../components/App.jsx';
 import ContentWrapper from '../components/ContentWrapper.jsx';
 import ActivityWrapper from '../components/ActivityWrapper.jsx'
 import AppWrapper from '../components/AppWrapper.jsx';
+import DropDownComponent from '../components/DropDownComponent.jsx';
 
 import Router from 'react-router';
 let Route = Router.Route;
@@ -15,6 +16,7 @@ let routes = (
       <Route path="ActivityWrapper/:topic" handler={AppWrapper} />
       <Route path="ContentWrapper" handler={AppWrapper} />
       <Route path="ContentWrapper/:area" handler={AppWrapper} />
+    <Route path="DropDownComponent" handler={AppWrapper} />
   </Route>
 );
 

@@ -4,7 +4,7 @@ import Tab from 'material-ui/lib/tabs/tab';
 import ActivityWrapper from './ActivityWrapper.jsx';
 import ContentWrapper from './ContentWrapper.jsx';
 import FontIcon from 'material-ui/lib/font-icon';
-
+import DropDownCompoent from './DropDownComponent.jsx';
 class AppWrapper extends React.Component{
 
     constructor(props) {
@@ -40,6 +40,10 @@ class AppWrapper extends React.Component{
                         </Tab>
                         <Tab label="Symptom Identifier" value="b" >
                             <ContentWrapper {...this.props}/>
+                        </Tab>
+                        <Tab label="Menu" value="c" >
+                            <DropDownCompoent>friends</DropDownCompoent>
+
                         </Tab>
                     </Tabs>
                 </div>
