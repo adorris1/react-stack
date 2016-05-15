@@ -1,7 +1,7 @@
 import Actions from '../actions';
 import Firebase from 'firebase';
 
-let firebaseRef = new Firebase('https://dorris-chiro.firebaseio.com/areas');
+let firebaseRef = new Firebase('https://dorris-chiro-injury.firebaseio.com/areas');
 
 let AreaSource = {
     getAreas: {

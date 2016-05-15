@@ -1,8 +1,12 @@
 import React from 'react';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import Tab from 'material-ui/lib/tabs/tab';
-import ActivityWrapper from './ActivityWrapper.jsx';
-import ContentWrapper from './ContentWrapper.jsx';
+import IconMenu from 'material-ui/lib/menus/icon-menu';
+import MenuItem from 'material-ui/lib/menus/menu-item';
+import ActivityWrapper from './activities/ActivityWrapper.jsx';
+import ContentWrapper from './symptomIdentifier/ContentWrapper.jsx';
+import InjuryWrapper from './injurySummaries/InjuryWrapper.jsx';
+//import InjuryIcon from './InjuryIcon.jsx';
 //import MenuList from './dropDownMenu/MenuList.jsx';
 //import FontIcon from 'material-ui/lib/font-icon';
 //import SvgIcon from 'material-ui/lib/svg-icon';
@@ -26,6 +30,7 @@ class AppWrapper extends React.Component{
     render(){
         return (
             <div>
+
                 <div style={{
           display: 'flex',
           flexFlow: 'row wrap',
@@ -33,7 +38,6 @@ class AppWrapper extends React.Component{
           width: '100%',
           margin: '30px auto 30px'
         }}>
-
                     <Tabs
                         value={this.state.value}
                         onChange={this.handleChange}
@@ -44,6 +48,9 @@ class AppWrapper extends React.Component{
                         </Tab>
                         <Tab label="Symptom Identifier" value="b" >
                             <ContentWrapper {...this.props}/>
+                        </Tab>
+                        <Tab label="Injury Summaries" value="c" >
+                            <InjuryWrapper {...this.props}/>
                         </Tab>
                     </Tabs>
                 </div>

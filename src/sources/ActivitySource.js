@@ -11,7 +11,7 @@ let ActivitySource = {
                 firebaseRef.off();
             }
 
-            firebaseRef = new Firebase('https://dorris-chiro.firebaseio.com/activites/' +
+            firebaseRef = new Firebase('https://dorris-chiro-stretch.firebaseio.com/Activites/activites/' +
                 state.selectedTopic.key);
 
             return new Promise((resolve, reject) => {

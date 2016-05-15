@@ -1,5 +1,25 @@
 $color: blue;
-
+header {
+  position: relative;
+  background-image: url("../tile.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 5em;
+  width: 5em;
+  top: 1em;
+  transform: scale3d(0.8, 0.8, 1);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  margin: 0 auto;
+  -moz-transition: all, 1s;
+  -o-transition: all, 1s;
+  -webkit-transition: all, 1s;
+  transition: all, 1s;
+}
 body {
   //color: $color;
   margin: 0;

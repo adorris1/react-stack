@@ -1,0 +1,265 @@
+{
+
+  "topics": {
+    "excerStretchNeck": {
+      "name": "excerStretchNeck",
+      "title": "Exercises & Stretches for the Neck"
+    },
+    "excerStretchShoulderArm": {
+      "name": "excerStretchShoulderArm",
+      "title": "Exercises & Stretches for the Shoulder/Arm"
+    },
+    "excerStretchPosture": {
+      "name": "excerStretchPosture",
+      "title": "Exercises & Stretches for the Posture"
+    },
+    "excerStretchCoreBack": {
+      "name": "excerStretchCoreBack",
+      "title": "Exercises & Stretches for the Core/Back"
+    },
+    "excerStretchHip": {
+      "name": "excerStretchHip",
+      "title": "Exercises & Stretches for the Hip"
+    },
+    "excerStretchHamstring": {
+      "name": "excerStretchHamstring",
+      "title": "Exercises & Stretches for the Hamstring"
+    },
+    "excerStretchInnerThigh": {
+      "name": "excerStretchInnerThigh",
+      "title": "Exercises & Stretches for the Inner Thigh"
+    },
+    "excerStretchLowerLegFoot": {
+      "name": "excerStretchLowerLegFoot",
+      "title": "Exercises & Stretches for the Lower Leg/Foot"
+    },
+    "excerBalance": {
+      "name": "excerBalance",
+      "title": "Exercises for Balance"
+    }
+  },
+  "Activites": {
+    "excerStretchNeck": [
+      {
+        "type": "exercise",
+        "purpose": "Strengthen the muscles at the front of the neck.",
+        "startingPosition": [
+          "1. Sit or stand tall with your shoulders relaxed.",
+          "2. Place one of your hands on your forehead.",
+          "3. Tuck your chin as if trying to give yourself a double chin."
+        ],
+        "keyToSuccess": [
+          "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+          "2. Maintain proper posture.",
+          "3. Don’t push too hard with your head as this could lead to injury.",
+          "4. Make sure to relax and breath through your stomach."
+        ],
+        "commonErrors": [
+          "1. Hunching the shoulders towards the ears.",
+          "2. Not maintaining proper posture.",
+          "3. Letting the chin protrude forward."
+        ],
+        "reccomendedFor": [
+          "1. Post whiplash injuries (under doctor supervision initially).",
+          "2. Those participating in contact sports."
+        ]
+      }
+    ],
+    "excerStretchShoulderArm": [{
+      "type": "exercise",
+      "purpose": "Strengthen the muscles at the front of the neck.",
+      "startingPosition": [
+        "1. Sit or stand tall with your shoulders relaxed.",
+        "2. Place one of your hands on your forehead.",
+        "3. Tuck your chin as if trying to give yourself a double chin."
+      ],
+      "keyToSuccess": [
+        "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+        "2. Maintain proper posture.",
+        "3. Don’t push too hard with your head as this could lead to injury.",
+        "4. Make sure to relax and breath through your stomach."
+      ],
+      "commonErrors": [
+        "1. Hunching the shoulders towards the ears.",
+        "2. Not maintaining proper posture.",
+        "3. Letting the chin protrude forward."
+      ],
+      "reccomendedFor": [
+        "1. Post whiplash injuries (under doctor supervision initially).",
+        "2. Those participating in contact sports."
+      ]
+    }
+    ],
+    "excerStretchPosture": [{
+      "type": "exercise",
+      "purpose": "Strengthen the muscles at the front of the neck.",
+      "startingPosition": [
+        "1. Sit or stand tall with your shoulders relaxed.",
+        "2. Place one of your hands on your forehead.",
+        "3. Tuck your chin as if trying to give yourself a double chin."
+      ],
+      "keyToSuccess": [
+        "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+        "2. Maintain proper posture.",
+        "3. Don’t push too hard with your head as this could lead to injury.",
+        "4. Make sure to relax and breath through your stomach."
+      ],
+      "commonErrors": [
+        "1. Hunching the shoulders towards the ears.",
+        "2. Not maintaining proper posture.",
+        "3. Letting the chin protrude forward."
+      ],
+      "reccomendedFor": [
+        "1. Post whiplash injuries (under doctor supervision initially).",
+        "2. Those participating in contact sports."
+      ]
+    }
+    ],
+    "excerStretchCoreBack": [{
+      "type": "exercise",
+      "purpose": "Strengthen the muscles at the front of the neck.",
+      "startingPosition": [
+        "1. Sit or stand tall with your shoulders relaxed.",
+        "2. Place one of your hands on your forehead.",
+        "3. Tuck your chin as if trying to give yourself a double chin."
+      ],
+      "keyToSuccess": [
+        "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+        "2. Maintain proper posture.",
+        "3. Don’t push too hard with your head as this could lead to injury.",
+        "4. Make sure to relax and breath through your stomach."
+      ],
+      "commonErrors": [
+        "1. Hunching the shoulders towards the ears.",
+        "2. Not maintaining proper posture.",
+        "3. Letting the chin protrude forward."
+      ],
+      "reccomendedFor": [
+        "1. Post whiplash injuries (under doctor supervision initially).",
+        "2. Those participating in contact sports."
+      ]
+    }],
+    "excerStretchHip": [{
+      "type": "exercise",
+      "purpose": "Strengthen the muscles at the front of the neck.",
+      "startingPosition": [
+        "1. Sit or stand tall with your shoulders relaxed.",
+        "2. Place one of your hands on your forehead.",
+        "3. Tuck your chin as if trying to give yourself a double chin."
+      ],
+      "keyToSuccess": [
+        "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+        "2. Maintain proper posture.",
+        "3. Don’t push too hard with your head as this could lead to injury.",
+        "4. Make sure to relax and breath through your stomach."
+      ],
+      "commonErrors": [
+        "1. Hunching the shoulders towards the ears.",
+        "2. Not maintaining proper posture.",
+        "3. Letting the chin protrude forward."
+      ],
+      "reccomendedFor": [
+        "1. Post whiplash injuries (under doctor supervision initially).",
+        "2. Those participating in contact sports."
+      ]
+    }],
+    "excerStretchHamstring": [{
+      "type": "exercise",
+      "purpose": "Strengthen the muscles at the front of the neck.",
+      "startingPosition": [
+        "1. Sit or stand tall with your shoulders relaxed.",
+        "2. Place one of your hands on your forehead.",
+        "3. Tuck your chin as if trying to give yourself a double chin."
+      ],
+      "keyToSuccess": [
+        "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+        "2. Maintain proper posture.",
+        "3. Don’t push too hard with your head as this could lead to injury.",
+        "4. Make sure to relax and breath through your stomach."
+      ],
+      "commonErrors": [
+        "1. Hunching the shoulders towards the ears.",
+        "2. Not maintaining proper posture.",
+        "3. Letting the chin protrude forward."
+      ],
+      "reccomendedFor": [
+        "1. Post whiplash injuries (under doctor supervision initially).",
+        "2. Those participating in contact sports."
+      ]
+    }],
+    "excerStretchInnerThigh": [{
+      "type": "exercise",
+      "purpose": "Strengthen the muscles at the front of the neck.",
+      "startingPosition": [
+        "1. Sit or stand tall with your shoulders relaxed.",
+        "2. Place one of your hands on your forehead.",
+        "3. Tuck your chin as if trying to give yourself a double chin."
+      ],
+      "keyToSuccess": [
+        "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+        "2. Maintain proper posture.",
+        "3. Don’t push too hard with your head as this could lead to injury.",
+        "4. Make sure to relax and breath through your stomach."
+      ],
+      "commonErrors": [
+        "1. Hunching the shoulders towards the ears.",
+        "2. Not maintaining proper posture.",
+        "3. Letting the chin protrude forward."
+      ],
+      "reccomendedFor": [
+        "1. Post whiplash injuries (under doctor supervision initially).",
+        "2. Those participating in contact sports."
+      ]
+    }],
+    "excerStretchLowerLegFoot": [{
+      "type": "exercise",
+      "purpose": "Strengthen the muscles at the front of the neck.",
+      "startingPosition": [
+        "1. Sit or stand tall with your shoulders relaxed.",
+        "2. Place one of your hands on your forehead.",
+        "3. Tuck your chin as if trying to give yourself a double chin."
+      ],
+      "keyToSuccess": [
+        "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+        "2. Maintain proper posture.",
+        "3. Don’t push too hard with your head as this could lead to injury.",
+        "4. Make sure to relax and breath through your stomach."
+      ],
+      "commonErrors": [
+        "1. Hunching the shoulders towards the ears.",
+        "2. Not maintaining proper posture.",
+        "3. Letting the chin protrude forward."
+      ],
+      "reccomendedFor": [
+        "1. Post whiplash injuries (under doctor supervision initially).",
+        "2. Those participating in contact sports."
+      ]
+    }],
+    "excerBalance": [{
+      "type": "exercise",
+      "purpose": "Strengthen the muscles at the front of the neck.",
+      "startingPosition": [
+        "1. Sit or stand tall with your shoulders relaxed.",
+        "2. Place one of your hands on your forehead.",
+        "3. Tuck your chin as if trying to give yourself a double chin."
+      ],
+      "keyToSuccess": [
+        "1. Keep your chin tucked (as if trying to give yourself a double chin) throughout the exercise.",
+        "2. Maintain proper posture.",
+        "3. Don’t push too hard with your head as this could lead to injury.",
+        "4. Make sure to relax and breath through your stomach."
+      ],
+      "commonErrors": [
+        "1. Hunching the shoulders towards the ears.",
+        "2. Not maintaining proper posture.",
+        "3. Letting the chin protrude forward."
+      ],
+      "reccomendedFor": [
+        "1. Post whiplash injuries (under doctor supervision initially).",
+        "2. Those participating in contact sports."
+      ]
+    }
+    ]
+  }
+}
+

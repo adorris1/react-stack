@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   iconSize: 24,
 
   desktopGutter: 24,
@@ -12,3 +12,6 @@ export default {
   desktopSubheaderHeight: 48,
   desktopToolbarHeight: 56,
 };
+
+
+

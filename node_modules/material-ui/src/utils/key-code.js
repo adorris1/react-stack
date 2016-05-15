@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   DOWN: 40,
   ESC: 27,
   ENTER: 13,

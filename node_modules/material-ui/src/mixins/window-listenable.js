@@ -1,14 +1,14 @@
-import Events from '../utils/events';
+let Events = require('../utils/events');
 
 
-export default {
+module.exports = {
 
   componentDidMount() {
     let listeners = this.windowListeners;
 
     for (let eventName in listeners) {
-      let callbackName = listeners[eventName];
-      Events.on(window, eventName, this[callbackName]);
+       let callbackName = listeners[eventName];
+       Events.on(window, eventName, this[callbackName]);
     }
   },
 
@@ -16,8 +16,8 @@ export default {
     let listeners = this.windowListeners;
 
     for (let eventName in listeners) {
-      let callbackName = listeners[eventName];
-      Events.off(window, eventName, this[callbackName]);
+       let callbackName = listeners[eventName];
+       Events.off(window, eventName, this[callbackName]);
     }
   },
 

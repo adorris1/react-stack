@@ -13,10 +13,10 @@ class App extends React.Component {
     super();
 
     ThemeManager.setPalette({
-      primary1Color: Colors.blue500,
-      primary2Color: Colors.blue700,
-      primary3Color: Colors.blue100,
-      accent1Color: Colors.pink400
+      primary1Color: Colors.lightBlue800,
+      primary2Color: Colors.lightBlue700,
+      primary3Color: Colors.lightBlue600,
+      accent1Color: Colors.grey400
     });
   }
 
@@ -36,7 +36,7 @@ class App extends React.Component {
 
     return (
         <div>
-          <AppBar title="Awesome Chat App" />
+          <AppBar title="Rehab Guide" />
           <RouteHandler />
         </div>
     );

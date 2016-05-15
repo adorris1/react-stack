@@ -17,7 +17,18 @@ class Actions {
         'activitiesReceived',
         'activitiesFailed',
         'activitiesLoading',
-        'activityReceived'
+        'activityReceived',
+        'imagesReceived',
+        'imagesFailed',
+        'imagesLoading',
+        'imageReceived',
+        'imageTopicsReceived',
+        'imageTopicsFailed',
+        'imageTopicOpened',
+        'injurySummariesReceived',
+        'injurySummariesFailed',
+        'injurySummariesLoading',
+        'injurySummaryReceived'
     );
   }
 }

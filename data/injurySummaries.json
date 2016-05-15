@@ -1,0 +1,207 @@
+{
+  "areas" : {
+    "head" : {
+      "name" : "head"
+    },
+    "neck" : {
+      "name" : "neck"
+    },
+    "midUpperBack" : {
+      "name" : "midUpperBack"
+    },
+    "shoulder" : {
+      "name" : "shoulder"
+    },
+    "elbow" : {
+      "name" : "elbow"
+    },
+    "wrist" : {
+      "name" : "wrist"
+    },
+    "lowerBack" : {
+      "name" : "lowerBack"
+    },
+    "hipsLegs" : {
+      "name" : "hipsLegs"
+    },
+    "knees" : {
+      "name" : "knees"
+    },
+    "lowerLegs" : {
+      "name" : "lowerLegs"
+    },
+    "ankleRearfoot" : {
+      "name" : "ankleRearfoot"
+    },
+    "heel" : {
+      "name" : "heel"
+    },
+    "forefoot" : {
+      "name" : "forefoot"
+    }
+  },
+  "injurySummaries" : {
+    "head" : [ {
+      "sufferingFrom" : "Migraine Headaches",
+      "img" : "https://www.filestackapi.com/api/file/lbpEFNjIScKbMbGPoBJ1"
+    }, {
+      "sufferingFrom" : "Tension Headaches",
+      "img" : "https://www.filestackapi.com/api/file/EYmuLmNJS6Kx6CMO0QUW"
+    } ],
+    "neck" : [ {
+      "sufferingFrom" : "Cervical Strain",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Torticollis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Thoracic Outlet Syndrome ",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    } ],
+    "midUpperBack" : [ {
+      "sufferingFrom" : "Subluxated Rib Head",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    } ],
+    "shoulder" : [ {
+      "sufferingFrom" : "Impingement Syndrome",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Bicipital Tendinitis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Adhesive Capsulitis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "AC Joint Sprain ",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    } ],
+
+    "elbow" : [ {
+      "sufferingFrom" : "Medial Epicondylitis",
+      "img" : "https://www.filestackapi.com/api/file/BDCqv3GHSRS4K4dugIKZ"
+    }, {
+      "sufferingFrom" : "Lateral Epicondylitis",
+      "img" : "https://www.filestackapi.com/api/file/BDCqv3GHSRS4K4dugIKZ"
+    } ],
+
+    "wrist" : [ {
+      "sufferingFrom" : "Carpal Tunne",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "DeQuervain’s Tenosynovitis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Scaphoid Fracture",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Ulnar Nerve Entrapement ",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    } ],
+    "lowerBack": [ {
+      "sufferingFrom" : "Herniated Disc",
+      "img" : "https://www.filestackapi.com/api/file/OrtIibefSc6VVwkJO1Zg"
+    }, {
+      "sufferingFrom" : "Scaphoid Fracture",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Ulnar Nerve Entrapement ",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }
+    ],
+    "hipsLegs" : [
+      {
+        "sufferingFrom" : "Adductor Strain",
+        "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+      },{
+      "sufferingFrom" : "Hip Osteoarthritis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Greater Trochanteric Pain Syndrome",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Piriformis Syndrome",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Hamstring Strain ",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }
+    ],
+    "knees" : [{
+        "sufferingFrom" : "IT Band Compression Syndrome ",
+        "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+      },{
+      "sufferingFrom" : "Medial Meniscus Tear",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Medial Knee Osteoarthritis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Petellofemoral Pain Syndrome ",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Petellar Tendinopathy",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }
+    ],
+    "lowerLegs": [ {
+      "sufferingFrom" : "Stress Fracture",
+      "img" : "https://www.filestackapi.com/api/file/OrtIibefSc6VVwkJO1Zg"
+    }, {
+      "sufferingFrom" : "Medial Tibial Stress Syndrome",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Chronic Compartment Syndrome",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }
+    ],
+    "ankleRearfoot" : [ {
+        "sufferingFrom" : "Non-Insertional Achilles Tendinosis ",
+        "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+      },{
+      "sufferingFrom" : "Paratenonitis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Insertional Achilles Tendinitis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Lateral Ankle Sprain",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Tibialis Posterior Tendinitis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }
+    ],
+    "heel": [ {
+      "sufferingFrom" : "Calcaneal Stress Fracture ",
+      "img" : "https://www.filestackapi.com/api/file/OrtIibefSc6VVwkJO1Zg"
+    }, {
+      "sufferingFrom" : "Heel Spur Syndrome",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Plantar Fasciitis ",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }
+    ],
+    "forefoot" : [
+      {
+        "sufferingFrom" : "Bunion",
+        "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+      }, {
+      "sufferingFrom" : "Hallux Limitus/Rigidus",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Interdigital Neuritis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Metatarsal Stress Fracture",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }, {
+      "sufferingFrom" : "Metatarsalgia",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    },{
+      "sufferingFrom" : "Sesamoiditis",
+      "img" : "https://www.filestackapi.com/api/file/AY5oSI7vTmqHnzzJfgFO"
+    }
+    ]
+  }
+}

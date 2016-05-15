@@ -1,0 +1,43 @@
+{
+  "areas" : {
+    "head" : {
+      "name" : "head"
+    },
+    "neck" : {
+      "name" : "neck"
+    },
+    "midUpperBack" : {
+      "name" : "midUpperBack"
+    },
+    "shoulder" : {
+      "name" : "shoulder"
+    },
+    "elbow" : {
+      "name" : "elbow"
+    },
+    "wrist" : {
+      "name" : "wrist"
+    },
+    "lowerBack" : {
+      "name" : "lowerBack"
+    },
+    "hipsLegs" : {
+      "name" : "hipsLegs"
+    },
+    "knees" : {
+      "name" : "knees"
+    },
+    "lowerLegs" : {
+      "name" : "lowerLegs"
+    },
+    "ankleRearfoot" : {
+      "name" : "ankleRearfoot"
+    },
+    "heel" : {
+      "name" : "heel"
+    },
+    "forefoot" : {
+      "name" : "forefoot"
+    }
+  }
+}
