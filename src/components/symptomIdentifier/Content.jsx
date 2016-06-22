@@ -13,11 +13,19 @@ class Content extends React.Component {
         return (
             <ListItem
                 primaryText={
-                <p><span style={{color: Colors.darkBlack}}>Possible Symptom: </span><br/>
-
-                {this.props.symptomSet.symptom}
-                </p>}
-            secondaryText= {this.props.symptomSet.sufferingFrom}
+                    <p>
+                <span style={{color: Colors.darkBlack}}>Possible Symptom: </span>
+                <span style={{color: Colors.darkblue}}>{this.props.symptomSet.symptom} </span>
+                
+                    </p>
+                }
+                secondaryText= {
+                    <p>
+                <span style={{color: Colors.darkBlack }}>  {this.props.symptomSet.sufferingFrom}</span>
+                    
+                   </p>
+                 }
+                
                 />
         );
     }

@@ -10,7 +10,10 @@ var {Card, List, CircularProgress, DropDownMenu, MenuItem} = mui;
 class TopicList extends React.Component{
     constructor(props){
         super(props);
-        this.state = {topics: null};
+        this.state = {
+            topics: null,
+            value: 0
+        };
     }
 
     componentDidMount(){
@@ -34,24 +37,24 @@ class TopicList extends React.Component{
     }
 
     render(){
-        if(!this.props.topics){
-            return (
-                <Card style={{
-          flexGrow: 1
-        }}>
-                    <CircularProgress
-                        mode="indeterminate"
-                        style={{
-              paddingTop: '20px',
-              paddingBottom: '20px',
-              margin: '0 auto',
-              display: 'block',
-              width: '60px'
-            }}
-                    />
-                </Card>
-            );
-        }
+        // if(!this.props.topics){
+        //     return (
+        // //         <Card style={{
+        // //   flexGrow: 1
+        // // }}>
+        // //             <CircularProgress
+        // //                 mode="indeterminate"
+        // //                 style={{
+        // //       paddingTop: '20px',
+        // //       paddingBottom: '20px',
+        // //       margin: '0 auto',
+        // //       display: 'block',
+        // //       width: '60px'
+        // //     }}
+        // //             />
+        // //         </Card>
+        //     );
+        // }
 
 
         var topicNodes = _(this.props.topics)

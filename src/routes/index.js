@@ -16,7 +16,8 @@ let routes = (
       <Route path="ActivityWrapper/:topic" handler={AppWrapper} />
       <Route path="ContentWrapper" handler={AppWrapper} />
       <Route path="ContentWrapper/:area" handler={AppWrapper} />
-
+      <Route path="InjuryWrapper" handler={AppWrapper} />
+      <Route path="InjuryWrapper/:area" handler={AppWrapper} />
   </Route>
 );
 

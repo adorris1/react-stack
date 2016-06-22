@@ -702,6 +702,9 @@ filepicker.extend("picker", function() {
         if (data.rotated !== undefined) {
             fpfile.rotated = data.rotated;
         }
+        if (data.converted !== undefined) {
+            fpfile.converted = data.converted;
+        }
         addIfExist(data, fpfile, "id");
         addIfExist(data, fpfile, "key");
         addIfExist(data, fpfile, "container");
@@ -1024,7 +1027,7 @@ filepicker.extend("errors", function() {
 "use strict";
 
 filepicker.extend(function() {
-    var fp = this, VERSION = "2.4.10";
+    var fp = this, VERSION = "2.4.11";
     fp.API_VERSION = "v2";
     var setKey = function(key) {
         fp.apikey = key;

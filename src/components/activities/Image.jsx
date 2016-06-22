@@ -1,7 +1,6 @@
 import React from 'react';
 import mui from 'material-ui';
-import Colors from 'material-ui/lib/styles/colors';
-import merge from 'merge';
+
 var {ListItem} = mui;
 
 class Image extends React.Component {

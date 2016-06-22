@@ -9,9 +9,9 @@ class Area extends React.Component{
         super(props);
     }
 
-    onClick(){
-        Actions.areaOpened(this.props.area);
-    }
+    // onClick(){
+    //     Actions.areaOpened(this.props.area);
+    // }
 
     render(){
         let style = {};
