@@ -5,7 +5,7 @@ import Firebase from 'firebase';
 import _ from 'lodash';
 import connectToStores from 'alt/utils/connectToStores';
 import ActivityStore from '../../stores/ActivityStore';
-
+import Styles from './ActivityWrapper.scss';
 var {Card, List, CircularProgress} = mui;
 
 @connectToStores

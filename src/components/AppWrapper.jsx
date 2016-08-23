@@ -5,6 +5,7 @@ import ActivityWrapper from './activities/ActivityWrapper.jsx';
 import ContentWrapper from './symptomIdentifier/ContentWrapper.jsx';
 import InjuryWrapper from './injurySummaries/InjuryWrapper.jsx';
 import mui from 'material-ui';
+import Styles from './App.scss';
 var {Card} = mui;
 
 class AppWrapper extends React.Component{
@@ -26,15 +27,7 @@ class AppWrapper extends React.Component{
     render(){
     
         return (
-            <div>
-
-                <div style={{
-          display: 'flex',
-          flexFlow: 'row wrap',
-          maxWidth: 1200,
-          width: '100%',
-          margin: '30px auto 30px'
-        }}>
+            <div className={Styles.defaultApp}>
 
                     <Tabs
                         value={this.state.value}
@@ -68,7 +61,6 @@ class AppWrapper extends React.Component{
                     </Tabs>
                     
                 </div>
-            </div>
         );
     }
 }
