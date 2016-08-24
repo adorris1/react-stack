@@ -27,7 +27,15 @@ class AppWrapper extends React.Component{
     render(){
     
         return (
-            <div className={Styles.defaultApp}>
+            <div>
+
+                <div style={{
+          display: 'flex',
+          flexFlow: 'row wrap',
+          maxWidth: 1200,
+          width: '100%',
+          margin: '30px auto 30px'
+        }}>
 
                     <Tabs
                         value={this.state.value}
@@ -60,6 +68,7 @@ class AppWrapper extends React.Component{
                         </Tab>
                     </Tabs>
                     
+                </div>
                 </div>
         );
     }

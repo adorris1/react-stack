@@ -21,12 +21,13 @@ class Activity extends React.Component{
         });
 
         return (
+
             <ListItem
                 primaryText = { <p>
-                    <span className={Styles.activity}>Type: </span>
+                    <span className={Styles.activityFont}>Type: </span>
                         {this.props.activity.type}</p>}
                 secondaryText = {<p>
-                    <span className={Styles.activity}>Common Erros: </span><br/>
+                    <span className={Styles.activityFont}>Common Erros: </span><br/>
                         {errors}<br/>
                         {this.props.activity.purpose}<br/>
                         <figure>

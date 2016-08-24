@@ -1,8 +1,5 @@
-.defaultApp {
-  flex-flow: row wrap;
-  display: flex;
-  max-width: 1200px;
-  margin: 30px auto 30px;
+.areaColor {
+  background-color: #F0F0F0;
 }
 
 .circularProgress {
@@ -14,6 +11,8 @@
 }
 
 .card {
-  flex-grow: 2;
+  flex-grow: 1;
   margin-left: 30px;
+  background-color: #00A000;
+  color: #00ee00;
 }

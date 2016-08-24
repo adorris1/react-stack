@@ -3,7 +3,7 @@ import Area from './Area.jsx';
 import mui from 'material-ui';
 import connectToStores from 'alt/utils/connectToStores';
 import InjuryStore from '../../stores/InjuryStore';
-
+import AreaStyles from './Area.scss';
 var {Card, List, CircularProgress} = mui;
 
 @connectToStores
@@ -41,13 +41,7 @@ class InjAreaList extends React.Component {
         }}>
                     <CircularProgress
                         mode="indeterminate"
-                        style={{
-              paddingTop: '20px',
-              paddingBottom: '20px',
-              margin: '0 auto',
-              display: 'block',
-              width: '60px'
-            }}
+                        style={AreaStyles.circularProgress}
                     />
                 </Card>
             );
@@ -65,9 +59,7 @@ class InjAreaList extends React.Component {
             .value();
 
         return (
-            <Card style={{
-        flexGrow: 1
-      }}>
+            <Card style={AreaStyles.card}>
                 <List>
                     {areaNodes}
                 </List>

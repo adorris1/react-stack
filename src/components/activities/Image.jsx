@@ -1,6 +1,6 @@
 import React from 'react';
 import mui from 'material-ui';
-
+import Styles from './Activity.scss';
 var {ListItem} = mui;
 
 class Image extends React.Component {
@@ -14,15 +14,8 @@ class Image extends React.Component {
 
     }
     render() {
-        var style = {
-            disImage: {
-                resizeMode: 'cover'
-            }
-        };
-            return(
-
-                    <img src = {this.props.src } width = "80%" height = "80%"   />
-
+        return(
+            <img className= {Styles.image} src = {this.props.src }/>
         );
     }
 }

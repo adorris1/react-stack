@@ -1,7 +1,7 @@
 import React from 'react';
 import mui from 'material-ui';
 import Actions from '../../actions';
-
+import Styles from './Area.scss';
 var {ListItem} = mui;
 
 class Area extends React.Component{
@@ -9,15 +9,15 @@ class Area extends React.Component{
         super(props);
     }
 
-    // onClick(){
-    //     Actions.areaOpened(this.props.area);
-    // }
+     onClick(){
+         Actions.areaOpened(this.props.area);
+     }
 
     render(){
         let style = {};
 
         if(this.props.area.selected){
-            style.backgroundColor = '#f0f0f0';
+            style.backgroundColor = Styles.areaColor;
         }
 
         return (

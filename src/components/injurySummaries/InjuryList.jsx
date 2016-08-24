@@ -5,6 +5,7 @@ import Firebase from 'firebase';
 import _ from 'lodash';
 import connectToStores from 'alt/utils/connectToStores';
 import InjuryStore from '../../stores/InjuryStore';
+import AreaStyles from './Area.scss';
 
 var {Card, List, CircularProgress} = mui;
 
@@ -31,23 +32,14 @@ class InjuryList extends React.Component {
                     <Injury injury={injury} key={i} />
                 );
             });
-        }else{
-            injuryNodes = <CircularProgress mode="indeterminate"
-                                              style={{
-          paddingTop: 20,
-          paddingBottom: 20,
-          margin: '0 auto',
-          display: 'block',
-          width: '60px'
-        }} />;
+        }
+        else{
+            injuryNodes = <CircularProgress mode="indeterminate" style={AreaStyles.circularProgress} />;
         }
 
 
         return (
-            <Card style={{
-        flexGrow: 2,
-        marginLeft: 30
-      }}>
+            <Card style={AreaStyles.card}>
                 <List>
                     {injuryNodes}
                 </List>
